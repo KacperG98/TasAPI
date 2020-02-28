@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 router.get('/', async (req, res) => {
-  res.send('hello get');
+  res.json([{ a: 'a' }, { a: 'b' }, { a: 'c' }]);
 });
 
 router.get('/:id', async (req, res) => {
