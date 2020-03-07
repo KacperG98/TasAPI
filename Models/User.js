@@ -12,7 +12,8 @@ const UserSchema = new mongoose.Schema({
   email: {
     type: String,
     required: true,
-    unique: true
+    unique: true,
+    required: true
   },
   password: {
     type: String,
@@ -32,9 +33,16 @@ const UserSchema = new mongoose.Schema({
       }
     }
   ],
+  ticket: [
+    {
+      type: mongoose.Schema.Types.ObjectID,
+      ref: 'Ticket'
+    }
+  ],
   premisions: [
     {
-      type: Number
+      type: Number,
+      default: 5
     }
   ],
   date: {
@@ -43,4 +51,4 @@ const UserSchema = new mongoose.Schema({
   }
 });
 
-module.exports = User = mongoose.model('user', UserSchema);
+module.exports = User = mongoose.model('User', UserSchema);

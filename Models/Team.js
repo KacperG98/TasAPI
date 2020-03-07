@@ -6,7 +6,8 @@ const TeamSchema = new mongoose.Schema({
   },
   members: [
     {
-      user: { type: mongoose.Schema.Types.ObjectID }
+      user: { type: mongoose.Schema.Types.ObjectID },
+      ref: 'User'
     }
   ]
 });
