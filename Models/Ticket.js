@@ -1,6 +1,9 @@
 const mongoose = require('mongoose');
 
 const TicketSchema = mongoose.Schema({
+  title: {
+    type: String
+  },
   task: [
     {
       task: {
